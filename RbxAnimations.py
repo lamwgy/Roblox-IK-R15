@@ -436,7 +436,7 @@ class OBJECT_OT_ImportModel(bpy.types.Operator, ImportHelper):
             obj.select_set(obj.type == 'MESH' or obj.type == 'ARMATURE' or obj.name.startswith('__RigMeta'))
         bpy.ops.object.delete()
         
-        bpy.ops.import_scene.obj(filepath=self.properties.filepath, use_split_groups=True)
+        bpy.ops.wm.obj_import(filepath=self.properties.filepath)
         
         # Extract meta...
         encodedmeta = ''
